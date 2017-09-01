@@ -3,7 +3,6 @@
 var program = require('commander');
 var request = require('request');
 var parseXml = require('xml2js').parseString;
-var util = require('util');
 
 const competitions_url = 'https://mobile.guardianapis.com/sport/football/competitions';
 const competition_teams_url_base = 'http://football.api.press.net/v1.5/competition/teams';
