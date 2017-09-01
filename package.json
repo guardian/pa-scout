@@ -10,10 +10,10 @@
     "tools",
     "football"
   ],
-  "author": "Max Spencer",
+  "author": "Max Spencer <max.spencer@theguardian.com>",
   "license": "MIT",
   "bin": {
-    "snippet": "./index.js"
+    "scout": "./index.js"
   },
   "dependencies": {
     "commander": "^2.11.0",

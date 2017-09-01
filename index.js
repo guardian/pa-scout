@@ -12,6 +12,7 @@ function get_competitions(filter, callback) {
     request(competitions_url, function (error, response, body) {
 	if (error) {
 	    callback(error);
+	    return;
 	}
 	
 	var result = JSON.parse(body);
@@ -42,11 +43,17 @@ function get_competition_teams(competition, filter, callback) {
     request(get_competition_teams_url(competition), function (error, response, body) {
 	if (error) {
 	    callback(error);
+	    return;
 	}
 
 	parseXml(body, function (error, xml) {
 	    if (error) {
 		callback(error);
+		return;
+	    }
+	    if (xml.teams.errors) {
+		callback(xml.teams.errors[0].error[0]);
+		return;
 	    }
 	    var results = [];
 	    xml.teams.team.filter(function(tag) {
@@ -67,8 +74,16 @@ program
     .option('-c, --competition <competition>', 'The competition to restrict results to')
     .action(function(query) {
 	get_competitions(program.competition, function(err, result) {
+	    if (err) {
+		console.error(err);
+		process.exit();
+	    }
 	    result.forEach(function(competition) {
 		get_competition_teams(competition, query, function(err, result) {
+		    if (err) {
+			console.error(err);
+			process.exit();
+		    }
 		    if (result.length > 0) {
 			console.log(competition.fullName + ":");
 			console.log(result);
