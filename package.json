@@ -1,0 +1,23 @@
+{
+  "name": "pa-scout",
+  "version": "0.1.0",
+  "description": "A command-line tool for searching the Press Association football data API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tools",
+    "football"
+  ],
+  "author": "Max Spencer",
+  "license": "MIT",
+  "bin": {
+    "snippet": "./index.js"
+  },
+  "dependencies": {
+    "commander": "^2.11.0",
+    "request": "^2.81.0",
+    "xml2js": "^0.4.19"
+  }
+}
