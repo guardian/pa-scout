@@ -24,7 +24,7 @@ You need to set your `PA_KEY` environment variable. Guardian employees ask @maxs
 
 1. Search find the competitions that "Man Utd" are playing in:
 
-        $ scout "man utd"
+        $ scout "Man Utd"
         Champions League:
         [ { name: 'Man Utd', id: '12' } ]
         Premier League:
@@ -34,7 +34,7 @@ You need to set your `PA_KEY` environment variable. Guardian employees ask @maxs
 
 2. Search for all teams with a name containing "Man" in all competitions:
 
-		$ scout man
+		$ scout Man
 		Champions League:
 		[ { name: 'Man City', id: '11' },
 		  { name: 'Man Utd', id: '12' } ]
