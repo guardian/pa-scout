@@ -4,7 +4,9 @@ A command-line tool for searching the Press Association football data API
 
 ## Installation
 
-npm install -g pa-scout
+TODO!
+
+    npm install -g pa-scout
 
 ## Usage
 
